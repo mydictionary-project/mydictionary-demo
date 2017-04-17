@@ -1,0 +1,29 @@
+{
+	"collection":
+	{
+		"filePath":"data/collection.xlsx",
+		"readable":true,
+		"writable":true,
+		"onlineSource":1
+	},
+	"dictionary":
+	[
+		{
+			"filePath":"data/example.xlsx",
+			"readable":true,
+			"writable":true,
+			"name":"example"
+		}
+	],
+	"online":
+	{
+		"mode":3,
+		"service":
+		{
+			"bingDictionary":true,
+			"icibaCollins":true,
+			"merriamWebster":true
+		},
+		"debug":false
+	}
+}

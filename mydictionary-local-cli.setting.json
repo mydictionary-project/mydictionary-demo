@@ -1,0 +1,8 @@
+{
+	"autoSaveFile":
+	{
+		"enable":true,
+		"timeIntervalSecond":600,
+		"notification":true
+	}
+}

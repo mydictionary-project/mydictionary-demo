@@ -61,7 +61,6 @@ Session.vim
 *~
 # auto-generated tag files
 tags
-Contact GitHub API Training Shop Blog About
 
 ## Go.gitignore
 
@@ -79,3 +78,8 @@ Contact GitHub API Training Shop Blog About
 
 # Project-local glide cache, RE: https://github.com/Masterminds/glide/issues/736
 .glide/
+
+## .gitignore
+
+mydictionary-local-cli*
+!mydictionary-local-cli.setting.json
