@@ -4,7 +4,7 @@
 		"filePath":"data/collection.xlsx",
 		"readable":true,
 		"writable":true,
-		"onlineSource":1
+		"onlineSource":"Bing Dictionary"
 	},
 	"dictionary":
 	[
@@ -24,6 +24,6 @@
 			"icibaCollins":true,
 			"merriamWebster":true
 		},
-		"debug":false
+		"debug":true
 	}
 }

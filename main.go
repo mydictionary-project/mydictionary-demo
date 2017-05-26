@@ -7,6 +7,7 @@ import (
 	"time"
 
 	"github.com/zzc-tongji/mydictionary"
+	"github.com/zzc-tongji/vocabulary4mydictionary"
 )
 
 var (
@@ -20,7 +21,7 @@ func main() {
 		tm               time.Time
 		information      string
 		inputReader      *bufio.Reader
-		vocabularyAsk    mydictionary.VocabularyAskStruct
+		vocabularyAsk    vocabulary4mydictionary.VocabularyAskStruct
 		vocabularyResult mydictionary.VocabularyResultStruct
 	)
 	// title
