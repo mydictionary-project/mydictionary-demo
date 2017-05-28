@@ -1,18 +1,41 @@
 {
 	"collection":
-	{
-		"filePath":"data/collection.xlsx",
-		"readable":true,
-		"writable":true,
-		"onlineSource":"Bing Dictionary"
-	},
+	[
+		{
+			"name":"bing-dictionary",
+			"filePath":"data/bing-dictionary.xlsx",
+			"readable":true,
+			"writable":true,
+			"onlineSource":"Bing Dictionary"
+		},
+		{
+			"name":"iciba-collins",
+			"filePath":"data/iciba-collins.xlsx",
+			"readable":true,
+			"writable":true,
+			"onlineSource":"iCIBA Collins"
+		},
+		{
+			"name":"merriam-webster",
+			"filePath":"data/merriam-webster.xlsx",
+			"readable":true,
+			"writable":true,
+			"onlineSource":"Merriam Webster"
+		}
+	],
 	"dictionary":
 	[
 		{
-			"filePath":"data/example.xlsx",
+			"name":"animal",
+			"filePath":"data/animal.xlsx",
 			"readable":true,
-			"writable":true,
-			"name":"example"
+			"writable":true
+		},
+		{
+			"name":"fruit",
+			"filePath":"data/fruit.xlsx",
+			"readable":true,
+			"writable":true
 		}
 	],
 	"online":
