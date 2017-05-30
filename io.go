@@ -136,6 +136,11 @@ func convertVocabularyAnswer(vocabularyAnswer vocabulary4mydictionary.Vocabulary
 		result += vocabularyAnswer.Define[i]
 		result += "\n"
 	}
+	for i := 0; i < len(vocabularyAnswer.Note); i++ {
+		result += "  # "
+		result += vocabularyAnswer.Note[i]
+		result += "\n"
+	}
 	if strings.Compare(vocabularyAnswer.Status, vocabulary4mydictionary.Basic) != 0 &&
 		strings.Compare(vocabularyAnswer.Status, vocabulary4mydictionary.Advance) != 0 {
 		result += "  {"
