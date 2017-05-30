@@ -47,6 +47,6 @@
 			"icibaCollins":true,
 			"merriamWebster":true
 		},
-		"debug":true
+		"debug":false
 	}
 }
