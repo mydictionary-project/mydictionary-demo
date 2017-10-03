@@ -10,6 +10,8 @@ import (
 	"github.com/zzc-tongji/vocabulary4mydictionary"
 )
 
+const version = "v1.0.1"
+
 var (
 	setting     settingStruct
 	quitChannel chan byte
@@ -19,31 +21,38 @@ func main() {
 	var (
 		err              error
 		tm               time.Time
+		timeString       string
 		information      string
 		inputReader      *bufio.Reader
 		vocabularyAsk    vocabulary4mydictionary.VocabularyAskStruct
 		vocabularyResult mydictionary.VocabularyResultStruct
 	)
-	// title
+	// get time
 	tm = time.Now()
-	fmt.Printf("\n[%04d-%02d-%02d %02d:%02d:%02d]\n\nmydictionary-local-cli v1.0.0\n\n", tm.Year(), tm.Month(), tm.Day(), tm.Hour(), tm.Minute(), tm.Second())
+	timeString = fmt.Sprintf("[%04d-%02d-%02d %02d:%02d:%02d]\n\n", tm.Year(), tm.Month(), tm.Day(), tm.Hour(), tm.Minute(), tm.Second())
+	// title
+	fmt.Printf("\n%smydictionary-local-cli %s\n\n", timeString, version)
 	// read setting
 	information, err = setting.read()
 	if err != nil {
-		fmt.Printf("[%04d-%02d-%02d %02d:%02d:%02d]\n\n%s\n\n", tm.Year(), tm.Month(), tm.Day(), tm.Hour(), tm.Minute(), tm.Second(), err.Error())
-		fmt.Printf("[%04d-%02d-%02d %02d:%02d:%02d]\n\nQuit (press \"enter\" to continue).\n\n", tm.Year(), tm.Month(), tm.Day(), tm.Hour(), tm.Minute(), tm.Second())
+		fmt.Printf(timeString)
+		fmt.Printf(err.Error() + "\n\n")
+		fmt.Printf(timeString)
+		fmt.Printf("Quit (press \"enter\" to continue).\n\n")
 		fmt.Scanf("%s", information)
 		return
 	}
 	// output setting
-	fmt.Printf("[%04d-%02d-%02d %02d:%02d:%02d]\n\n%s\n\n", tm.Year(), tm.Month(), tm.Day(), tm.Hour(), tm.Minute(), tm.Second(), information)
+	fmt.Printf(timeString + information + "\n\n")
 	// initialize
 	fmt.Printf("preparing data...")
 	information, err = mydictionary.Initialize()
 	fmt.Printf("\r")
 	if err != nil {
-		fmt.Printf("[%04d-%02d-%02d %02d:%02d:%02d]\n\n%s\n\n", tm.Year(), tm.Month(), tm.Day(), tm.Hour(), tm.Minute(), tm.Second(), err.Error())
-		fmt.Printf("[%04d-%02d-%02d %02d:%02d:%02d]\n\nQuit (press \"enter\" to continue).\n\n", tm.Year(), tm.Month(), tm.Day(), tm.Hour(), tm.Minute(), tm.Second())
+		fmt.Printf(timeString)
+		fmt.Printf(err.Error() + "\n\n")
+		fmt.Printf(timeString)
+		fmt.Printf("Quit (press \"enter\" to continue).\n\n")
 		fmt.Scanf("%s", information)
 		return
 	}
@@ -56,9 +65,11 @@ func main() {
 	// start a goroutine for automatic saving, manual saving and quitting
 	quitChannel = make(chan byte, 1)
 	go quitAndSave()
-	// ready
+	// get time
 	tm = time.Now()
-	fmt.Printf("[%04d-%02d-%02d %02d:%02d:%02d]\n\n", tm.Year(), tm.Month(), tm.Day(), tm.Hour(), tm.Minute(), tm.Second())
+	timeString = fmt.Sprintf("[%04d-%02d-%02d %02d:%02d:%02d]\n\n", tm.Year(), tm.Month(), tm.Day(), tm.Hour(), tm.Minute(), tm.Second())
+	// ready
+	fmt.Printf(timeString)
 	fmt.Printf("ready\n\n")
 	fmt.Printf("TIPS: press \"*\" and \"enter\" to quit at any time\n\n")
 	// start
@@ -78,9 +89,13 @@ func main() {
 			vocabularyResult, err = mydictionary.Query(vocabularyAsk)
 			fmt.Printf("\r")
 			if err != nil {
+				// get time
 				tm = time.Now()
-				fmt.Printf("[%04d-%02d-%02d %02d:%02d:%02d]\n\n%s\n\n", tm.Year(), tm.Month(), tm.Day(), tm.Hour(), tm.Minute(), tm.Second(), err.Error())
-				fmt.Printf("[%04d-%02d-%02d %02d:%02d:%02d]\n\nQuit (press \"enter\" to continue).\n\n", tm.Year(), tm.Month(), tm.Day(), tm.Hour(), tm.Minute(), tm.Second())
+				timeString = fmt.Sprintf("[%04d-%02d-%02d %02d:%02d:%02d]\n\n", tm.Year(), tm.Month(), tm.Day(), tm.Hour(), tm.Minute(), tm.Second())
+				fmt.Printf(timeString)
+				fmt.Printf(err.Error() + "\n\n")
+				fmt.Printf(timeString)
+				fmt.Printf("Quit (press \"enter\" to continue).\n\n")
 				fmt.Scanf("%s", information)
 				return
 			}
