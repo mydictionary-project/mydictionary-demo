@@ -34,12 +34,14 @@ func quitAndSave() {
 			case <-quitChannel:
 				// press "*" and "enter"
 				save()
+				writeSetting()
 				quit()
 			case <-controlC:
 				// press "control-c"
 				if strings.Compare(runtime.GOOS, "windows") != 0 {
 					fmt.Printf("\n\n")
 					save()
+					writeSetting()
 				}
 				quit()
 			}
@@ -51,12 +53,14 @@ func quitAndSave() {
 			case <-quitChannel:
 				// press "*" and "enter"
 				save()
+				writeSetting()
 				quit()
 			case <-controlC:
 				// press "control-c"
 				if strings.Compare(runtime.GOOS, "windows") != 0 {
 					fmt.Printf("\n\n")
 					save()
+					writeSetting()
 				}
 				quit()
 			}
@@ -68,6 +72,18 @@ func save() {
 	var information string
 	_, information = mydictionary.Save()
 	fmt.Printf(information)
+}
+
+func writeSetting() {
+	var err error
+	err = mydictionary.Setting.Write()
+	if err != nil {
+		fmt.Printf(err.Error() + "\n\n")
+	}
+	err = setting.Write()
+	if err != nil {
+		fmt.Printf(err.Error() + "\n\n")
+	}
 }
 
 func quit() {
