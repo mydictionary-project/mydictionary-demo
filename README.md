@@ -42,7 +42,7 @@ It is the configuration of the core library.
 
 Getting further information from [here](https://github.com/zzc-tongji/mydictionary#24-configuration).
 
-##### 3.1.2. file "mydictionary-local.setting.json"
+##### 3.1.2. file "mydictionary-local-cli.setting.json"
 
 It is the configuration of the application.
 
