@@ -3,7 +3,6 @@ package main
 import (
 	"encoding/json"
 	"io/ioutil"
-	"strings"
 
 	"github.com/zzc-tongji/rtoa"
 )
@@ -18,7 +17,7 @@ type settingStruct struct {
 }
 
 // read setting
-func (setting *settingStruct) read() (information string, err error) {
+func (setting *settingStruct) read() (content string, err error) {
 	const TimeIntervalSecondMinimum int = 10
 	var (
 		buf  []byte
@@ -42,6 +41,7 @@ func (setting *settingStruct) read() (information string, err error) {
 	if setting.AutoSaveFile.TimeIntervalSecond < TimeIntervalSecondMinimum {
 		setting.AutoSaveFile.TimeIntervalSecond = TimeIntervalSecondMinimum
 	}
-	information = strings.TrimRight(string(buf), "\n")
+	buf, err = json.MarshalIndent(setting, "", "\t")
+	content = string(buf)
 	return
 }
