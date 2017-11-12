@@ -17,53 +17,40 @@ func quitAndSave() {
 		controlC chan os.Signal
 		ticker   *time.Ticker
 	)
+	// channel: controlC
 	controlC = make(chan os.Signal)
 	signal.Notify(controlC, syscall.SIGINT)
+	// channel: ticker
 	if setting.AutoSaveFile.Enable {
 		// enable autosave
 		ticker = time.NewTicker(time.Duration(setting.AutoSaveFile.TimeIntervalSecond) * time.Second)
-		for {
-			select {
-			case <-ticker.C:
-				// ticker
-				if setting.AutoSaveFile.Notification {
-					save()
-				} else {
-					mydictionary.Save()
-				}
-			case <-quitChannel:
-				// press "*" and "enter"
-				save()
-				writeSetting()
-				quit()
-			case <-controlC:
-				// press "control-c"
-				if strings.Compare(runtime.GOOS, "windows") != 0 {
-					fmt.Printf("\n\n")
-					save()
-					writeSetting()
-				}
-				quit()
-			}
-		}
 	} else {
-		// disable autosave
-		for {
-			select {
-			case <-quitChannel:
-				// press "*" and "enter"
+		// disable autosave by setting time interval as 1 year
+		ticker = time.NewTicker(time.Duration(31536000) * time.Second)
+	}
+	// wait for channel data
+	for {
+		select {
+		case <-ticker.C:
+			// ticker
+			if setting.AutoSaveFile.Notification {
+				save()
+			} else {
+				mydictionary.Save()
+			}
+		case <-quitChannel:
+			// press "*" and "enter"
+			save()
+			writeSetting()
+			quit()
+		case <-controlC:
+			// press "control-c"
+			if strings.Compare(runtime.GOOS, "windows") != 0 {
+				fmt.Printf("\n\n")
 				save()
 				writeSetting()
-				quit()
-			case <-controlC:
-				// press "control-c"
-				if strings.Compare(runtime.GOOS, "windows") != 0 {
-					fmt.Printf("\n\n")
-					save()
-					writeSetting()
-				}
-				quit()
 			}
+			quit()
 		}
 	}
 }
