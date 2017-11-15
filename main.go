@@ -10,7 +10,7 @@ import (
 	"github.com/zzc-tongji/vocabulary4mydictionary"
 )
 
-const version = "v2.1.1"
+const version = "v2.2.0"
 
 var (
 	setting     settingStruct
