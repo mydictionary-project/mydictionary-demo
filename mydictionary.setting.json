@@ -1,52 +1,52 @@
 {
-	"collection":
-	[
+	"collection": [
 		{
-			"name":"bing-dictionary",
-			"filePath":"data/bing-dictionary.xlsx",
-			"readable":true,
-			"writable":true,
-			"onlineSource":"Bing Dictionary"
+			"name": "bing-dictionary",
+			"filePath": "data/bing-dictionary.xlsx",
+			"readable": true,
+			"writable": true,
+			"onlineSource": "Bing Dictionary"
 		},
 		{
-			"name":"iciba-collins",
-			"filePath":"data/iciba-collins.xlsx",
-			"readable":true,
-			"writable":true,
-			"onlineSource":"iCIBA Collins"
+			"name": "iciba-collins",
+			"filePath": "data/iciba-collins.xlsx",
+			"readable": true,
+			"writable": true,
+			"onlineSource": "iCIBA Collins"
 		},
 		{
-			"name":"merriam-webster",
-			"filePath":"data/merriam-webster.xlsx",
-			"readable":true,
-			"writable":true,
-			"onlineSource":"Merriam Webster"
+			"name": "merriam-webster",
+			"filePath": "data/merriam-webster.xlsx",
+			"readable": true,
+			"writable": true,
+			"onlineSource": "Merriam Webster"
 		}
 	],
-	"dictionary":
-	[
+	"dictionary": [
 		{
-			"name":"animal",
-			"filePath":"data/animal.xlsx",
-			"readable":true,
-			"writable":true
+			"name": "animal",
+			"filePath": "data/animal.xlsx",
+			"readable": true,
+			"writable": true
 		},
 		{
-			"name":"fruit",
-			"filePath":"data/fruit.xlsx",
-			"readable":true,
-			"writable":true
+			"name": "fruit",
+			"filePath": "data/fruit.xlsx",
+			"readable": true,
+			"writable": true
 		}
 	],
-	"online":
-	{
-		"mode":3,
-		"service":
-		{
-			"Bing Dictionary":true,
-			"iCIBA Collins":true,
-			"Merriam Webster":true
+	"online": {
+		"mode": 3,
+		"service": {
+			"Bing Dictionary": true,
+			"iCIBA Collins": true,
+			"Merriam Webster": true
 		},
-		"debug":false
+		"cache": {
+			"enable": true,
+			"shelfLifeDay": 7
+		},
+		"debug": false
 	}
 }

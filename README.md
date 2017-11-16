@@ -6,8 +6,6 @@
 
 It is a cross-platform CLI application of excel-based and online dictionaries with [MYDICTIONARY](https://github.com/zzc-tongji/mydictionary).
 
-For better comprehension, please read [basic information](https://github.com/zzc-tongji/mydictionary#2-basic-information) at first.
-
 ### 2. Release
 
 Get executable files for different platforms from [here](https://github.com/zzc-tongji/mydictionary-local-cli/releases).
@@ -20,13 +18,15 @@ The most important thing should be emphasized 3 time at first:
 - **Press "\*" and "enter" to quit.**
 - **Press "\*" and "enter" to quit.**
 
+Also, for better comprehension, please read [basic information](https://github.com/zzc-tongji/mydictionary#2-basic-information) at first.
+
 #### 3.1. Configure
 
 Before using the application, configuration files in [JSON](http://www.json.org/) should be edited.
 
 Such files could be modified by any editors of plain text, such as "Notepad" (for Windows) and "TextEdit" (for macOS).
 
-For users who have difficulty with it, [JSON Editor Online]( http://jsoneditoronline.org/) could be a helpful tool. Here is the manual:
+For users who have difficulty with it, [JSON Editor Online](http://jsoneditoronline.org/) could be a helpful tool. Here is the manual:
 
 1. Open the default configuration file.
 2. Copy the content to the left part of the website.
@@ -50,11 +50,10 @@ Here is an example:
 
 ```json
 {
-	"autoSaveFile":
-	{
-		"enable":true,
-		"timeIntervalSecond":600,
-		"notification":true
+	"autoSaveFile": {
+		"enable": true,
+		"timeIntervalSecond": 600,
+		"notification": true
 	}
 }
 ```
