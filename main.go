@@ -10,7 +10,7 @@ import (
 	"github.com/zzc-tongji/vocabulary4mydictionary"
 )
 
-const version = "v2.3.0"
+const version = "v2.3.1"
 
 var (
 	setting     settingStruct
@@ -22,6 +22,7 @@ func main() {
 		err              error
 		tm               time.Time
 		timeString       string
+		success          bool
 		information      string
 		inputReader      *bufio.Reader
 		vocabularyAsk    vocabulary4mydictionary.VocabularyAskStruct
@@ -46,17 +47,15 @@ func main() {
 	fmt.Printf(timeString + information + "\n\n")
 	// initialize
 	fmt.Printf("preparing data...")
-	information, err = mydictionary.Initialize()
+	success, information = mydictionary.Initialize()
 	fmt.Printf("\r")
-	if err != nil {
-		fmt.Printf(timeString)
-		fmt.Printf(err.Error() + "\n\n")
+	fmt.Printf(information)
+	if success == false {
 		fmt.Printf(timeString)
 		fmt.Printf("Quit (press \"enter\" to continue).\n\n")
 		fmt.Scanf("%s", information)
 		return
 	}
-	fmt.Printf(information)
 	// check network
 	fmt.Printf("checking network...")
 	_, information = mydictionary.CheckNetwork()
