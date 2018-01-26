@@ -58,7 +58,11 @@ func quitAndSave() {
 func save() {
 	var information string
 	_, information = mydictionary.Save()
-	fmt.Printf(information)
+	if information != "" {
+		tm = time.Now()
+		fmt.Printf("[%04d-%02d-%02d %02d:%02d:%02d]\n\n", tm.Year(), tm.Month(), tm.Day(), tm.Hour(), tm.Minute(), tm.Second())
+		fmt.Printf(information)
+	}
 }
 
 func writeSetting() {
@@ -74,7 +78,6 @@ func writeSetting() {
 }
 
 func quit() {
-	var tm time.Time
 	tm = time.Now()
 	fmt.Printf("[%04d-%02d-%02d %02d:%02d:%02d]\n\nQuit.\n\n", tm.Year(), tm.Month(), tm.Day(), tm.Hour(), tm.Minute(), tm.Second())
 	os.Exit(0)

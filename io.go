@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/zzc-tongji/mydictionary"
 	"github.com/zzc-tongji/vocabulary4mydictionary"
 )
 
@@ -65,7 +64,7 @@ func input(inputReader *bufio.Reader) (vocabularyAsk vocabulary4mydictionary.Voc
 }
 
 // output
-func output(vocabularyAsk vocabulary4mydictionary.VocabularyAskStruct, vocabularyResult mydictionary.VocabularyResultStruct) {
+func output(vocabularyAsk vocabulary4mydictionary.VocabularyAskStruct, vocabularyResult vocabulary4mydictionary.VocabularyResultStruct) {
 	const (
 		separator1 = "============================================================\n"
 		separator2 = "------------------------------------------------------------\n"
@@ -126,14 +125,14 @@ func convertVocabularyAnswer(vocabularyAnswer vocabulary4mydictionary.Vocabulary
 		result = "{null}"
 	}
 	result += "\n"
-	if vocabularyAnswer.Type == vocabulary4mydictionary.Online {
+	if vocabularyAnswer.Location.TableType == vocabulary4mydictionary.Online {
 		result += fmt.Sprintf("  [%s]\n", vocabularyAnswer.SourceName)
 	} else {
 		result += fmt.Sprintf("  [%s: %d] (%d)\n", vocabularyAnswer.SourceName, vocabularyAnswer.SerialNumber, vocabularyAnswer.QueryCounter)
 	}
-	for i := 0; i < len(vocabularyAnswer.Define); i++ {
+	for i := 0; i < len(vocabularyAnswer.Definition); i++ {
 		result += "  "
-		result += vocabularyAnswer.Define[i]
+		result += vocabularyAnswer.Definition[i]
 		result += "\n"
 	}
 	for i := 0; i < len(vocabularyAnswer.Note); i++ {

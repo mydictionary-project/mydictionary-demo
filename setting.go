@@ -43,7 +43,7 @@ func (setting *settingStruct) read() (content string, err error) {
 		setting.AutoSaveFile.TimeIntervalSecond = TimeIntervalSecondMinimum
 	}
 	buf, err = json.MarshalIndent(setting, "", "\t")
-	content = string(buf)
+	content = string(buf) + "\n\n"
 	return
 }
 

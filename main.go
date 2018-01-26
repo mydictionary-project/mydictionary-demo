@@ -10,9 +10,8 @@ import (
 	"github.com/zzc-tongji/vocabulary4mydictionary"
 )
 
-const version = "v2.3.1"
-
 var (
+	tm          time.Time
 	setting     settingStruct
 	quitChannel chan byte
 )
@@ -20,38 +19,35 @@ var (
 func main() {
 	var (
 		err              error
-		tm               time.Time
-		timeString       string
 		success          bool
 		information      string
 		inputReader      *bufio.Reader
 		vocabularyAsk    vocabulary4mydictionary.VocabularyAskStruct
-		vocabularyResult mydictionary.VocabularyResultStruct
+		vocabularyResult vocabulary4mydictionary.VocabularyResultStruct
 	)
-	// get time
-	tm = time.Now()
-	timeString = fmt.Sprintf("[%04d-%02d-%02d %02d:%02d:%02d]\n\n", tm.Year(), tm.Month(), tm.Day(), tm.Hour(), tm.Minute(), tm.Second())
 	// title
-	fmt.Printf("\n%smydictionary-local-cli %s\n\n", timeString, version)
+	tm = time.Now()
+	fmt.Printf("\n[%04d-%02d-%02d %02d:%02d:%02d]\n\nmydictionary-local-cli\n\n", tm.Year(), tm.Month(), tm.Day(), tm.Hour(), tm.Minute(), tm.Second())
 	// read setting
 	information, err = setting.read()
 	if err != nil {
-		fmt.Printf(timeString)
+		fmt.Printf("[%04d-%02d-%02d %02d:%02d:%02d]\n\n", tm.Year(), tm.Month(), tm.Day(), tm.Hour(), tm.Minute(), tm.Second())
 		fmt.Printf(err.Error() + "\n\n")
-		fmt.Printf(timeString)
+		fmt.Printf("[%04d-%02d-%02d %02d:%02d:%02d]\n\n", tm.Year(), tm.Month(), tm.Day(), tm.Hour(), tm.Minute(), tm.Second())
 		fmt.Printf("Quit (press \"enter\" to continue).\n\n")
 		fmt.Scanf("%s", information)
 		return
 	}
-	// output setting
-	fmt.Printf(timeString + information + "\n\n")
+	fmt.Printf("[%04d-%02d-%02d %02d:%02d:%02d]\n\n%s", tm.Year(), tm.Month(), tm.Day(), tm.Hour(), tm.Minute(), tm.Second(), information)
 	// initialize
 	fmt.Printf("preparing data...")
 	success, information = mydictionary.Initialize()
 	fmt.Printf("\r")
-	fmt.Printf(information)
+	tm = time.Now()
+	fmt.Printf("[%04d-%02d-%02d %02d:%02d:%02d]\n\nmydictionary\n\n", tm.Year(), tm.Month(), tm.Day(), tm.Hour(), tm.Minute(), tm.Second())
+	fmt.Printf("[%04d-%02d-%02d %02d:%02d:%02d]\n\n%s", tm.Year(), tm.Month(), tm.Day(), tm.Hour(), tm.Minute(), tm.Second(), information)
 	if success == false {
-		fmt.Printf(timeString)
+		fmt.Printf("[%04d-%02d-%02d %02d:%02d:%02d]\n\n", tm.Year(), tm.Month(), tm.Day(), tm.Hour(), tm.Minute(), tm.Second())
 		fmt.Printf("Quit (press \"enter\" to continue).\n\n")
 		fmt.Scanf("%s", information)
 		return
@@ -60,15 +56,14 @@ func main() {
 	fmt.Printf("checking network...")
 	_, information = mydictionary.CheckNetwork()
 	fmt.Printf("\r")
-	fmt.Printf(information)
+	tm = time.Now()
+	fmt.Printf("[%04d-%02d-%02d %02d:%02d:%02d]\n\n%s", tm.Year(), tm.Month(), tm.Day(), tm.Hour(), tm.Minute(), tm.Second(), information)
 	// start a goroutine for automatic saving, manual saving and quitting
 	quitChannel = make(chan byte, 1)
 	go quitAndSave()
-	// get time
-	tm = time.Now()
-	timeString = fmt.Sprintf("[%04d-%02d-%02d %02d:%02d:%02d]\n\n", tm.Year(), tm.Month(), tm.Day(), tm.Hour(), tm.Minute(), tm.Second())
 	// ready
-	fmt.Printf(timeString)
+	tm = time.Now()
+	fmt.Printf("[%04d-%02d-%02d %02d:%02d:%02d]\n\n", tm.Year(), tm.Month(), tm.Day(), tm.Hour(), tm.Minute(), tm.Second())
 	fmt.Printf("ready\n\n")
 	fmt.Printf("TIPS: press \"*\" and \"enter\" to quit at any time\n\n")
 	// start
@@ -85,16 +80,13 @@ func main() {
 		} else if vocabularyAsk.Word != "" {
 			// query
 			fmt.Printf("waiting for online paraphrase...")
-			vocabularyResult, err = mydictionary.Query(vocabularyAsk)
+			success, vocabularyResult = mydictionary.Query(vocabularyAsk)
 			fmt.Printf("\r")
-			if err != nil {
+			if success == false {
 				// get time
 				tm = time.Now()
-				timeString = fmt.Sprintf("[%04d-%02d-%02d %02d:%02d:%02d]\n\n", tm.Year(), tm.Month(), tm.Day(), tm.Hour(), tm.Minute(), tm.Second())
-				fmt.Printf(timeString)
-				fmt.Printf(err.Error() + "\n\n")
-				fmt.Printf(timeString)
-				fmt.Printf("Quit (press \"enter\" to continue).\n\n")
+				fmt.Printf("[%04d-%02d-%02d %02d:%02d:%02d]\n\nMYDICTIONARY has not been initialized.\n\n", tm.Year(), tm.Month(), tm.Day(), tm.Hour(), tm.Minute(), tm.Second())
+				fmt.Printf("[%04d-%02d-%02d %02d:%02d:%02d]\n\nQuit (press \"enter\" to continue).\n\n", tm.Year(), tm.Month(), tm.Day(), tm.Hour(), tm.Minute(), tm.Second())
 				fmt.Scanf("%s", information)
 				return
 			}
