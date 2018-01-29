@@ -1,48 +1,50 @@
-# MYDICTIONARY LOCAL CLI
+# MYDICTIONARY  LOCAL CLI
 
-[简体中文版](./README.zh-Hans.md)
+[English Version](./README.md)
 
-### 1. Introduction
+### 1. 简介
 
-It is a cross-platform CLI application of excel-based and online dictionaries with [MYDICTIONARY](https://github.com/zzc-tongji/mydictionary).
+这是一个基于Excel表格与在线内容的词典应用程序。
 
-### 2. Release
+这是一个基于[MYDICTIONARY](https://github.com/zzc-tongji/mydictionary/blob/master/README.zh-Hans.md)的跨平台命令行应用程序
 
-Get executable files for different platforms from [here](https://github.com/zzc-tongji/mydictionary-local-cli/releases).
+### 2. 发布
 
-### 3. Manual
+从[这里](https://github.com/zzc-tongji/mydictionary-local-cli/releases)获得针对不同平台的可执行文件。
 
-The most important thing should be emphasized 3 time at first:
+### 3. 使用指南
 
-- **Press "\*" and "enter" to quit.**
-- **Press "\*" and "enter" to quit.**
-- **Press "\*" and "enter" to quit.**
+最重要的事情先说三遍：
 
-Also, for better comprehension, please read [basic information](https://github.com/zzc-tongji/mydictionary#2-basic-information) at first.
+- **键入“*”和“回车”以退出程序。**
+- **键入“*”和“回车”以退出程序。**
+- **键入“*”和“回车”以退出程序。**
 
-#### 3.1. Configure File
+同时，为了更好的理解本文，请先阅读[基本信息](https://github.com/zzc-tongji/mydictionary/blob/master/README.zh-Hans.md#2-%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF)。
 
-Before using the application, configuration files in [JSON](http://www.json.org/) should be edited.
+#### 3.1. 配置文件
 
-Such files could be modified by any editors of plain text, such as "Notepad" (for Windows) and "TextEdit" (for macOS).
+在使用应用程序以前，应当编辑JSON格式的配置文件。
 
-Users could also use [JSON Editor Online](http://jsoneditoronline.org/) to edit them:
+这些文件可以用纯文本编辑器进行编辑，例如“记事本”（Windows）和“文本编辑”（macOS）。
 
-1. Open the default configuration file.
-2. Copy the content to the left part of the webpage.
-3. Click the right arrow, the content will be parsed in the right part.
-4. Edit things in the right part.
-5. Click the left arrow, the content will be updated.
-6. Copy the content to the configuration file.
-7. Save the configuration file.
+用户还可以使用 [JSON Editor Online](http://jsoneditoronline.org/) 来编辑它们：
 
-##### 3.1.1. Configure File "mydictionary.setting.json"
+1. 打开默认的配置文件。
+2. 将其内容拷贝到网页的左边。
+3. 点击右箭头，文件内容会被解析到右边。
+4. 在右边进行编辑。
+5. 点击左箭头，文件内容会被更新。
+6. 将内容拷贝到配置文件。
+7. 保存配置文件。
 
-Getting further information from [here](https://github.com/zzc-tongji/mydictionary#24-configuration).
+##### 3.1.1. 配置文件 "mydictionary.setting.json"
 
-##### 3.1.2.  Configure File "mydictionary-local-cli.setting.json"
+从[这里](https://github.com/zzc-tongji/mydictionary/blob/master/README.zh-Hans.md#24-%E9%85%8D%E7%BD%AE)获取更多信息。
 
-Here is an example:
+##### 3.1.2. 配置文件 "mydictionary-local-cli.setting.json"
+
+示例：
 
 ```json
 {
@@ -54,24 +56,24 @@ Here is an example:
 }
 ```
 
-When the application launches, *collection files* and *dictionary files* are copied to corresponding *collections* and *dictionaries* (RAM images). When the application exits, *collections* and *dictionaries* are written back to corresponding *collection files* and *dictionary files*. By doing this, the application can *record* *vocabularies* in RAM, which provides high running efficiency.
+当应用程序启动时，*生词本文件*和*离线词典文件*会被拷贝到对应的*生词本*和*离线词典*（内存映像）中。当应用程序退出时，*生词本*和*离线词典*会被写回到对应的*生词本文件*和*离线词典文件*中。这种机制使得对*词条*的*记录*均在内存中完成，大大提升了运行效率。
 
-But here is a problem: if the application aborts, all *vocabularies* *recorded* by this run will lose forever. To prevent this, the application is able to automatically write back data to files.
+但是这也带来一个问题：一旦程序异常退出，本次运行中*记录*的*词条*将会永久丢失。为了解决这个问题的，应用程序具有自动写回功能。
 
-`"autoSaveFile"` is designed to control the action of writing back. It has got 3 members.
+`"autoSaveFile"`用于控制自动写回功能，具有三个成员：
 
-- Boolean `"enable"`: If it is `true`, the action is enabled.
-- Integer `"timeIntervalSecond"`: it determines the time interval (second) between two actions.
-- Boolean `"notification"`: if it is `true`, the application will display the information when the action happen.
+- 布尔型`"enable"`：如果设定为`true` ， 那么启用自动写回功能。
+- 整数`"timeIntervalSecond"`：决定两次写回操作的时间间隔（秒）。
+- 布尔型`"notification"`：如果设定为`true` ，应用程序会在自动写回时显示信息。
 
-#### 3.2. Launch
+#### 3.2.启动
 
-Before launching the application, all *collection files* and *dictionary files* should not be used by any other applications, like [Microsoft Excel](https://products.office.com/excel) or [WPS表格](http://www.wps.cn/product).
+在启动应用程序以前，请确保所有XLSX文件未被其他应用程序（比如[Microsoft Excel](https://products.office.com/zh-cn/excel)或[WPS表格](http://www.wps.cn/product)）所使用。
 
-If the application launches successfully, users will see this:
+如果应用程序成功启动，用户会看到：
 
 ```
-(... bash ...) $ ./mydictionary-local-cli
+(... 终端信息 ...) $ ./mydictionary-local-cli
 
 [2017-06-06 15:24:54]
 
@@ -79,7 +81,7 @@ mydictionary-local
 
 [2017-06-06 15:24:54]
 
-(... the content of file "mydictionary-local-cli.setting.json" ...)
+(... 配置文件 mydictionary-local-cli.setting.json 的内容 ...)
 
 [2017-06-06 15:24:54]
 
@@ -87,11 +89,11 @@ mydictionary
 
 [2017-06-06 15:24:54]
 
-(... the content of file "mydictionary.setting.json" ...)
+(... 配置文件 mydictionary.setting.json 的内容 ...)
 
 [2017-06-06 15:24:55]
 
-(... the result of network checking ...)
+(... 网络检查的结果 ...)
 
 [2017-06-06 15:24:55]
 
@@ -100,48 +102,49 @@ ready
 TIPS: press "*" and "enter" to quit at any time
 ```
 
-At this time, the application is ready.
+此时，应用程序已准备完毕。
 
-If there is something wrong, the application will display the reason and quit, like this:
+若应用程序未能正常启动，则输出错误并退出。例如：
 
 ```
 [2017-06-06 17:31:47]
 
-incorrect format of file "(... path ...)/data/animal.xlsx": missing cell "Word" in row 1
+incorrect format of file "(... 路径 ...)/data/animal.xlsx": missing cell "Word" in row 1
 
 [2017-06-06 17:31:47]
 
 Quit (press "enter" to continue).
 ```
 
-#### 3.3. Query
+#### 3.3. 查询
 
-Here is a typical query:
+一个典型的查询如下：
 
 ```
 apple!@#
-// the word with option users input
+// 这是注释，终端不会输出这部分信息
+// 用户输入的词汇和查询选项
 
 ============================================================
 apple (advance, online, do not record)
-// the word with option
+// 词汇和查询选项
 ------------------------------------------------------------
 * BASIC
-// query type, "BASIC" or "ADVANCE"
+// 查询类型，BASIC 或 ADVANCE
 
 apple
   [fruit: 1] (0)
-  // for collection or dictionary, [name: serious number] (query counter)
+  // 对于生词本和本地词典, [名字: 序号] (查询计数)
   n. 苹果公司；【植】苹果；【植】苹果树
   网络 苹果电脑；美国苹果；美国苹果公司
-  // define(s)
+  // 释义
   # Since the meeting takes place on Apple's property, the company has every right to make the rules.
   # 由于会议地点在苹果公司，公司完全有权利制定规则。
-  // note(s)
+  // 笔记
 
 apple
   [Merriam Webster]
-  // for service, [name]
+  // 对于在线词典, [名字]
   noun
   : a round fruit with red, yellow, or green skin and firm white flesh
 
@@ -159,11 +162,11 @@ apple
 ============================================================
 ```
 
-##### 3.3.1. Basic Query
+##### 3.3.1. 基本查询
 
-If users input a word and press "enter", the application will execute *basic query*.
+键入单词和“回车”，应用程序会执行*基本查询*。
 
-Getting further information about *basic query* and *advance query* from [here](https://github.com/zzc-tongji/vocabulary4mydictionary#2-query).
+从[这里](https://github.com/zzc-tongji/vocabulary4mydictionary/blob/master/README.zh-Hans.md#2-%E6%9F%A5%E8%AF%A2)获取更多关于*基本查询*和*高级查询*的信息。
 
 ```
 cat
@@ -226,9 +229,9 @@ frustration
 ============================================================
 ```
 
-##### 3.3.2. Advance Query
+##### 3.3.2. 高级查询
 
-If users input a word with `!` or `！`, the application will execute *advanced query*.
+在键入的单词中加入`!`或`！`，应用程序会执行*高级查询*。
 
 ```
 frustration!
@@ -270,11 +273,11 @@ cat
 ============================================================
 ```
 
-##### 3.3.3. Online Query
+##### 3.3.3. 在线查询
 
-If users input a word with `@`, it will let the application know that users need query the word online.
+在键入的单词中加入`@`，应用程序会被告知用户希望执行在线查询。
 
-**Whether the application queries the word online also depends on `online.mode` in *configuration file* `mydictionary.setting.json`.** Getting further information from [here](https://github.com/zzc-tongji/mydictionary#2431-mode).
+**应用程序是否真正执行在线查询还取决于*配置文件*`mydictionary.setting.json`中的`online.mode`。** 从[这里](https://github.com/zzc-tongji/mydictionary/blob/master/README.zh-Hans.md#2431-mode)获取更多信息。
 
 ```
 apple@
@@ -310,9 +313,9 @@ apple
 ============================================================
 ```
 
-##### 3.3.4. Do Not Record
+##### 3.3.4. 不要记录
 
-If users input a word with `#`, the application will not *record* anything to *collections* and *dictionaries*.
+在键入的单词中加入`#`，应用程序将不会*记录*结果到*生词本*和*离线词典*。
 
 ```
 apple#
@@ -331,34 +334,34 @@ apple
 ============================================================
 ```
 
-#### 3.4. Exit
+#### 3.4. 退出
 
-**Press "\*" and "enter" to quit.** Otherwise, *collections* and *dictionaries* will not be written back to corresponding *collection files* and *dictionary files*, which means all changes will lose.
+**键入“\*”和“回车”以退出程序。** 否则，*生词本*和*离线词典*将不会被写回到对应的*生词本文件*和*离线词典文件*中，这意味着所有更改将会丢失。
 
 ```
 *
 
 [2017-06-06 15:45:57]
 
-(... the information of writing back ...)
+(... 写回操作的信息 ...)
 
 [2017-06-06 15:45:57]
 
 Quit.
 
-(... bash ...) $
+(... 终端信息 ...) $
 ```
 
-### 4. Communication
+### 4. 交流
 
-- [Feedback](https://github.com/zzc-tongji/mydictionary-local-cli/issues)
-- QQ group: 657218106
+- [反馈](https://github.com/zzc-tongji/mydictionary-local-cli/issues)
+- QQ群：657218106
 
 ![657218106](./README.picture/657218106.png)
 
-### 5. Others
+### 5. 其他
 
-- All code files are edited by [Atom](https://atom.io/).
-- All ".md" files are edited by [Typora](http://typora.io).
-- The style of all ".md" files is [Github Flavored Markdown](https://guides.github.com/features/mastering-markdown/#GitHub-flavored-markdown).
-- There is a LF (Linux) at the end of each line.
+- 所以代码文件是用[Atom](https://atom.io/)编写的。
+- 所有".md"文件是用[Typora](http://typora.io)编写的。
+- 所有".md"文件的风格是[Github Flavored Markdown](https://guides.github.com/features/mastering-markdown/#GitHub-flavored-markdown)。
+- 各行以LF（Linux）结尾。
