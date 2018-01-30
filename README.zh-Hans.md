@@ -1,4 +1,4 @@
-# MYDICTIONARY  LOCAL CLI
+# MYDICTIONARY 桌面应用程序（命令行）
 
 [English Version](./README.md)
 
@@ -6,7 +6,9 @@
 
 这是一个基于Excel表格与在线内容的词典应用程序。
 
-这是一个基于[MYDICTIONARY](https://github.com/zzc-tongji/mydictionary/blob/master/README.zh-Hans.md)的跨平台命令行应用程序
+这是一个基于[MYDICTIONARY](https://github.com/zzc-tongji/mydictionary/blob/master/README.zh-Hans.md)的跨平台应用程序。
+
+这是一个基于命令行的桌面应用程序。
 
 ### 2. 发布
 

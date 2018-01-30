@@ -29,7 +29,7 @@ func main() {
 	)
 	// title
 	tm = time.Now()
-	fmt.Printf("\n[%04d-%02d-%02d %02d:%02d:%02d]\n\nmydictionary-local-cli\n\n", tm.Year(), tm.Month(), tm.Day(), tm.Hour(), tm.Minute(), tm.Second())
+	fmt.Printf("\n[%04d-%02d-%02d %02d:%02d:%02d]\n\nmydictionary-client-cli\n\n", tm.Year(), tm.Month(), tm.Day(), tm.Hour(), tm.Minute(), tm.Second())
 	// path
 	workPath, err = filepath.Abs(filepath.Dir(os.Args[0]))
 	if err != nil {

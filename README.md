@@ -1,10 +1,10 @@
-# MYDICTIONARY LOCAL CLI
+# MYDICTIONARY Desktop Application of CLI
 
 [简体中文版](./README.zh-Hans.md)
 
 ### 1. Introduction
 
-It is a cross-platform CLI application of excel-based and online dictionaries with [MYDICTIONARY](https://github.com/zzc-tongji/mydictionary).
+It is a cross-platform CLI desktop application of excel-based and online dictionaries with [MYDICTIONARY](https://github.com/zzc-tongji/mydictionary).
 
 ### 2. Release
 
