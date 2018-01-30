@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"io/ioutil"
 	"os"
+	"path/filepath"
 )
 
 // setting
@@ -21,7 +22,7 @@ func (setting *settingStruct) read() (content string, err error) {
 	const TimeIntervalSecondMinimum int = 10
 	var buf []byte
 	// read
-	setting.path = workPath + "mydictionary-local-cli.setting.json"
+	setting.path = workPath + string(filepath.Separator) + "mydictionary-local-cli.setting.json"
 	buf, err = ioutil.ReadFile(setting.path)
 	if err != nil {
 		return

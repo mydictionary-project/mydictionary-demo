@@ -30,6 +30,16 @@ func main() {
 	// title
 	tm = time.Now()
 	fmt.Printf("\n[%04d-%02d-%02d %02d:%02d:%02d]\n\nmydictionary-local-cli\n\n", tm.Year(), tm.Month(), tm.Day(), tm.Hour(), tm.Minute(), tm.Second())
+	// path
+	workPath, err = filepath.Abs(filepath.Dir(os.Args[0]))
+	if err != nil {
+		fmt.Printf("[%04d-%02d-%02d %02d:%02d:%02d]\n\n", tm.Year(), tm.Month(), tm.Day(), tm.Hour(), tm.Minute(), tm.Second())
+		fmt.Printf(err.Error() + "\n\n")
+		fmt.Printf("[%04d-%02d-%02d %02d:%02d:%02d]\n\n", tm.Year(), tm.Month(), tm.Day(), tm.Hour(), tm.Minute(), tm.Second())
+		fmt.Printf("Quit (press \"enter\" to continue).\n\n")
+		fmt.Scanf("%s", information)
+		return
+	}
 	// read setting
 	information, err = setting.read()
 	if err != nil {
@@ -43,15 +53,6 @@ func main() {
 	fmt.Printf("[%04d-%02d-%02d %02d:%02d:%02d]\n\n%s", tm.Year(), tm.Month(), tm.Day(), tm.Hour(), tm.Minute(), tm.Second(), information)
 	// initialize
 	fmt.Printf("preparing data...")
-	workPath, err = filepath.Abs(filepath.Dir(os.Args[0]))
-	if err != nil {
-		fmt.Printf("[%04d-%02d-%02d %02d:%02d:%02d]\n\n", tm.Year(), tm.Month(), tm.Day(), tm.Hour(), tm.Minute(), tm.Second())
-		fmt.Printf(err.Error() + "\n\n")
-		fmt.Printf("[%04d-%02d-%02d %02d:%02d:%02d]\n\n", tm.Year(), tm.Month(), tm.Day(), tm.Hour(), tm.Minute(), tm.Second())
-		fmt.Printf("Quit (press \"enter\" to continue).\n\n")
-		fmt.Scanf("%s", information)
-		return
-	}
 	success, information = mydictionary.Initialize([]string{workPath, workPath + string(filepath.Separator) + "document", workPath + string(filepath.Separator) + "cache"})
 	fmt.Printf("\r")
 	tm = time.Now()
