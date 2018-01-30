@@ -277,7 +277,7 @@ cat
 
 在键入的单词中加入`@`，应用程序会被告知用户希望执行在线查询。
 
-**应用程序是否真正执行在线查询还取决于*配置文件*`mydictionary.setting.json`中的`online.mode`。** 从[这里](https://github.com/zzc-tongji/mydictionary/blob/master/README.zh-Hans.md#2431-mode)获取更多信息。
+**应用程序是否真正执行在线查询还取决于*配置文件*`mydictionary.setting.json`中的`online.mode`。** 从[这里](https://github.com/zzc-tongji/mydictionary/blob/master/README.zh-Hans.md#2531-mode)获取更多信息。
 
 ```
 apple@

@@ -2,21 +2,21 @@
 	"collection": [
 		{
 			"name": "bing-dictionary",
-			"filePath": "data/bing-dictionary.xlsx",
+			"fileName": "bing-dictionary.xlsx",
 			"readable": true,
 			"writable": true,
 			"onlineSource": "Bing Dictionary"
 		},
 		{
 			"name": "iciba-collins",
-			"filePath": "data/iciba-collins.xlsx",
+			"fileName": "iciba-collins.xlsx",
 			"readable": true,
 			"writable": true,
 			"onlineSource": "iCIBA Collins"
 		},
 		{
 			"name": "merriam-webster",
-			"filePath": "data/merriam-webster.xlsx",
+			"fileName": "merriam-webster.xlsx",
 			"readable": true,
 			"writable": true,
 			"onlineSource": "Merriam Webster"
@@ -25,13 +25,13 @@
 	"dictionary": [
 		{
 			"name": "animal",
-			"filePath": "data/animal.xlsx",
+			"fileName": "animal.xlsx",
 			"readable": true,
 			"writable": true
 		},
 		{
 			"name": "fruit",
-			"filePath": "data/fruit.xlsx",
+			"fileName": "fruit.xlsx",
 			"readable": true,
 			"writable": true
 		}

@@ -274,7 +274,7 @@ cat
 
 If users input a word with `@`, it will let the application know that users need query the word online.
 
-**Whether the application queries the word online also depends on `online.mode` in *configuration file* `mydictionary.setting.json`.** Getting further information from [here](https://github.com/zzc-tongji/mydictionary#2431-mode).
+**Whether the application queries the word online also depends on `online.mode` in *configuration file* `mydictionary.setting.json`.** Getting further information from [here](https://github.com/zzc-tongji/mydictionary#2531-mode).
 
 ```
 apple@

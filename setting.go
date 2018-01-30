@@ -4,12 +4,11 @@ import (
 	"encoding/json"
 	"io/ioutil"
 	"os"
-
-	"github.com/zzc-tongji/rtoa"
 )
 
 // setting
 type settingStruct struct {
+	path         string
 	AutoSaveFile struct {
 		Enable             bool `json:"enable"`
 		TimeIntervalSecond int  `json:"timeIntervalSecond"`
@@ -20,17 +19,10 @@ type settingStruct struct {
 // read setting
 func (setting *settingStruct) read() (content string, err error) {
 	const TimeIntervalSecondMinimum int = 10
-	var (
-		buf  []byte
-		path string
-	)
-	// convert path
-	path, err = rtoa.Convert("mydictionary-local-cli.setting.json", "")
-	if err != nil {
-		return
-	}
+	var buf []byte
 	// read
-	buf, err = ioutil.ReadFile(path)
+	setting.path = workPath + "mydictionary-local-cli.setting.json"
+	buf, err = ioutil.ReadFile(setting.path)
 	if err != nil {
 		return
 	}
@@ -49,24 +41,16 @@ func (setting *settingStruct) read() (content string, err error) {
 
 // Write : write setting
 func (setting *settingStruct) Write() (err error) {
-	var (
-		buf  []byte
-		path string
-	)
-	// convert path
-	path, err = rtoa.Convert("mydictionary-local-cli.setting.json", "")
-	if err != nil {
-		return
-	}
+	var buf []byte
 	// write
 	buf, err = json.MarshalIndent(setting, "", "\t")
 	if err != nil {
 		return
 	}
-	err = os.Remove(path)
+	err = os.Remove(setting.path)
 	if err != nil {
 		return
 	}
-	err = ioutil.WriteFile(path, buf, 0644)
+	err = ioutil.WriteFile(setting.path, buf, 0644)
 	return
 }
