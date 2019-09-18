@@ -1,14 +1,14 @@
-# MYDICTIONARY Desktop Application of CLI
+# MYDICTIONARY Demo
 
-[简体中文版](./README.zh-Hans.md)
+[简体中文](./README.zh-Hans.md)
 
 ### 1. Introduction
 
-It is a cross-platform CLI desktop application of excel-based and online dictionaries with [MYDICTIONARY](https://github.com/zzc-tongji/mydictionary).
+It is a cross-platform CLI desktop application of excel-based and online dictionaries with [MYDICTIONARY](https://github.com/zzc-tongji/mydictionary/blob/master/readme/main.md).
 
 ### 2. Release
 
-Get executable files for different platforms from [here](https://github.com/zzc-tongji/mydictionary-local-cli/releases).
+Get executable files for different platforms from [here](https://github.com/zzc-tongji/mydictionary-demo/releases).
 
 ### 3. Manual
 
@@ -18,7 +18,7 @@ The most important thing should be emphasized 3 time at first:
 - **Press "\*" and "enter" to quit.**
 - **Press "\*" and "enter" to quit.**
 
-Also, for better comprehension, please read [basic information](https://github.com/zzc-tongji/mydictionary#2-basic-information) at first.
+Also, for better comprehension, please read [basic information](https://github.com/zzc-tongji/mydictionary/blob/master/readme/main.md#2-basic-information) at first.
 
 #### 3.1. Configure File
 
@@ -38,7 +38,7 @@ Users could also use [JSON Editor Online](http://jsoneditoronline.org/) to edit 
 
 ##### 3.1.1. Configure File "mydictionary.setting.json"
 
-Getting further information from [here](https://github.com/zzc-tongji/mydictionary#24-configuration).
+Getting further information from [here](https://github.com/zzc-tongji/mydictionary/blob/master/readme/main.md#24-configuration).
 
 ##### 3.1.2.  Configure File "mydictionary-local-cli.setting.json"
 
@@ -163,7 +163,7 @@ apple
 
 If users input a word and press "enter", the application will execute *basic query*.
 
-Getting further information about *basic query* and *advance query* from [here](https://github.com/zzc-tongji/vocabulary4mydictionary#2-query).
+Getting further information about *basic query* and *advance query* from [here](https://github.com/zzc-tongji/mydictionary/blob/master/readme/vocabulary.md#2-query).
 
 ```
 cat
@@ -274,7 +274,7 @@ cat
 
 If users input a word with `@`, it will let the application know that users need query the word online.
 
-**Whether the application queries the word online also depends on `online.mode` in *configuration file* `mydictionary.setting.json`.** Getting further information from [here](https://github.com/zzc-tongji/mydictionary#2531-mode).
+**Whether the application queries the word online also depends on `online.mode` in *configuration file* `mydictionary.setting.json`.** Getting further information from [here](https://github.com/zzc-tongji/mydictionary/blob/master/readme/main.md#2531-mode).
 
 ```
 apple@
@@ -351,10 +351,10 @@ Quit.
 
 ### 4. Communication
 
-- [Feedback](https://github.com/zzc-tongji/mydictionary-local-cli/issues)
-- QQ group: 657218106
+- [Feedback](https://github.com/zzc-tongji/mydictionary-demo/issues)
+- QQ group: 727068810
 
-![657218106](./README.picture/657218106.png)
+![727068810](./README.picture/727068810.png)
 
 ### 5. Others
 

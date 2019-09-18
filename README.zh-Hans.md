@@ -1,18 +1,18 @@
-# MYDICTIONARY 桌面应用程序（命令行）
+# MYDICTIONARY 演示程序
 
-[English Version](./README.md)
+[English](./README.md)
 
 ### 1. 简介
 
 这是一个基于Excel表格与在线内容的词典应用程序。
 
-这是一个基于[MYDICTIONARY](https://github.com/zzc-tongji/mydictionary/blob/master/README.zh-Hans.md)的跨平台应用程序。
+这是一个基于[MYDICTIONARY](https://github.com/zzc-tongji/mydictionary/blob/master/readme/main.zh-Hans.md)的跨平台应用程序。
 
 这是一个基于命令行的桌面应用程序。
 
 ### 2. 发布
 
-从[这里](https://github.com/zzc-tongji/mydictionary-local-cli/releases)获得针对不同平台的可执行文件。
+从[这里](https://github.com/zzc-tongji/mydictionary-demo/releases)获得针对不同平台的可执行文件。
 
 ### 3. 使用指南
 
@@ -22,15 +22,15 @@
 - **键入“*”和“回车”以退出程序。**
 - **键入“*”和“回车”以退出程序。**
 
-同时，为了更好的理解本文，请先阅读[基本信息](https://github.com/zzc-tongji/mydictionary/blob/master/README.zh-Hans.md#2-%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF)。
+同时，为了更好的理解本文，请先阅读[基本信息](https://github.com/zzc-tongji/mydictionary/blob/master/readme/main.zh-Hans.md#2-%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF)。
 
 #### 3.1. 配置文件
 
-在使用应用程序以前，应当编辑JSON格式的配置文件。
+在使用应用程序以前，应当编辑[JSON](http://www.json.org/)格式的配置文件。
 
 这些文件可以用纯文本编辑器进行编辑，例如“记事本”（Windows）和“文本编辑”（macOS）。
 
-用户还可以使用 [JSON Editor Online](http://jsoneditoronline.org/) 来编辑它们：
+用户还可以使用[JSON Editor Online](http://jsoneditoronline.org/)来编辑它们：
 
 1. 打开默认的配置文件。
 2. 将其内容拷贝到网页的左边。
@@ -42,7 +42,7 @@
 
 ##### 3.1.1. 配置文件 "mydictionary.setting.json"
 
-从[这里](https://github.com/zzc-tongji/mydictionary/blob/master/README.zh-Hans.md#24-%E9%85%8D%E7%BD%AE)获取更多信息。
+从[这里](https://github.com/zzc-tongji/mydictionary/blob/master/readme/main.md#24-%E9%85%8D%E7%BD%AE)获取更多信息。
 
 ##### 3.1.2. 配置文件 "mydictionary-local-cli.setting.json"
 
@@ -168,7 +168,7 @@ apple
 
 键入单词和“回车”，应用程序会执行*基本查询*。
 
-从[这里](https://github.com/zzc-tongji/vocabulary4mydictionary/blob/master/README.zh-Hans.md#2-%E6%9F%A5%E8%AF%A2)获取更多关于*基本查询*和*高级查询*的信息。
+从[这里](https://github.com/zzc-tongji/mydictionary/blob/master/readme/vocabulary.zh-Hans.md#2-%E6%9F%A5%E8%AF%A2)获取更多关于*基本查询*和*高级查询*的信息。
 
 ```
 cat
@@ -279,7 +279,7 @@ cat
 
 在键入的单词中加入`@`，应用程序会被告知用户希望执行在线查询。
 
-**应用程序是否真正执行在线查询还取决于*配置文件*`mydictionary.setting.json`中的`online.mode`。** 从[这里](https://github.com/zzc-tongji/mydictionary/blob/master/README.zh-Hans.md#2531-mode)获取更多信息。
+**应用程序是否真正执行在线查询还取决于*配置文件*`mydictionary.setting.json`中的`online.mode`。** 从[这里](https://github.com/zzc-tongji/mydictionary/blob/master/readme/main.zh-Hans.md#2531-mode)获取更多信息。
 
 ```
 apple@
@@ -356,10 +356,10 @@ Quit.
 
 ### 4. 交流
 
-- [反馈](https://github.com/zzc-tongji/mydictionary-local-cli/issues)
-- QQ群：657218106
+- [反馈](https://github.com/zzc-tongji/mydictionary-demo/issues)
+- QQ群：727068810
 
-![657218106](./README.picture/657218106.png)
+![727068810](./README.picture/727068810.png)
 
 ### 5. 其他
 

@@ -81,5 +81,5 @@ tags
 
 ## .gitignore
 
-mydictionary-client-cli*
-!mydictionary-client-cli.setting.json
+mydictionary-demo*
+!mydictionary-demo.setting.json
