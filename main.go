@@ -7,8 +7,7 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/zzc-tongji/mydictionary"
-	"github.com/zzc-tongji/vocabulary4mydictionary"
+	"github.com/zzc-tongji/mydictionary/v4"
 )
 
 var (
@@ -24,8 +23,8 @@ func main() {
 		success          bool
 		information      string
 		inputReader      *bufio.Reader
-		vocabularyAsk    vocabulary4mydictionary.VocabularyAskStruct
-		vocabularyResult vocabulary4mydictionary.VocabularyResultStruct
+		vocabularyAsk    mydictionary.VocabularyAskStruct
+		vocabularyResult mydictionary.VocabularyResultStruct
 	)
 	// title
 	tm = time.Now()

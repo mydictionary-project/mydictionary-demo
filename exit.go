@@ -9,7 +9,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/zzc-tongji/mydictionary"
+	"github.com/zzc-tongji/mydictionary/v4"
 )
 
 func quitAndSave() {

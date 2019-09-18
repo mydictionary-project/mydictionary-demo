@@ -5,11 +5,11 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/zzc-tongji/vocabulary4mydictionary"
+	"github.com/zzc-tongji/mydictionary/v4"
 )
 
 // input
-func input(inputReader *bufio.Reader) (vocabularyAsk vocabulary4mydictionary.VocabularyAskStruct) {
+func input(inputReader *bufio.Reader) (vocabularyAsk mydictionary.VocabularyAskStruct) {
 	var err error
 	// input
 	vocabularyAsk.Word, err = inputReader.ReadString('\n')
@@ -64,7 +64,7 @@ func input(inputReader *bufio.Reader) (vocabularyAsk vocabulary4mydictionary.Voc
 }
 
 // output
-func output(vocabularyAsk vocabulary4mydictionary.VocabularyAskStruct, vocabularyResult vocabulary4mydictionary.VocabularyResultStruct) {
+func output(vocabularyAsk mydictionary.VocabularyAskStruct, vocabularyResult mydictionary.VocabularyResultStruct) {
 	const (
 		separator1 = "============================================================\n"
 		separator2 = "------------------------------------------------------------\n"
@@ -98,7 +98,7 @@ func output(vocabularyAsk vocabulary4mydictionary.VocabularyAskStruct, vocabular
 }
 
 // convert struct "VocabularyAsk" to string
-func convertVocabularyAsk(vocabularyAsk vocabulary4mydictionary.VocabularyAskStruct) (result string) {
+func convertVocabularyAsk(vocabularyAsk mydictionary.VocabularyAskStruct) (result string) {
 	result = vocabularyAsk.Word
 	if vocabularyAsk.Advance || vocabularyAsk.Online || vocabularyAsk.DoNotRecord {
 		result += " ("
@@ -119,13 +119,13 @@ func convertVocabularyAsk(vocabularyAsk vocabulary4mydictionary.VocabularyAskStr
 }
 
 // convert struct "VocabularyAnswer" to string
-func convertVocabularyAnswer(vocabularyAnswer vocabulary4mydictionary.VocabularyAnswerStruct) (result string) {
+func convertVocabularyAnswer(vocabularyAnswer mydictionary.VocabularyAnswerStruct) (result string) {
 	result = vocabularyAnswer.Word
 	if strings.Compare(result, "") == 0 {
 		result = "{null}"
 	}
 	result += "\n"
-	if vocabularyAnswer.Location.TableType == vocabulary4mydictionary.Online {
+	if vocabularyAnswer.Location.TableType == mydictionary.Online {
 		result += fmt.Sprintf("  [%s]\n", vocabularyAnswer.SourceName)
 	} else {
 		result += fmt.Sprintf("  [%s: %d] (%d)\n", vocabularyAnswer.SourceName, vocabularyAnswer.SerialNumber, vocabularyAnswer.QueryCounter)
@@ -140,8 +140,8 @@ func convertVocabularyAnswer(vocabularyAnswer vocabulary4mydictionary.Vocabulary
 		result += vocabularyAnswer.Note[i]
 		result += "\n"
 	}
-	if strings.Compare(vocabularyAnswer.Status, vocabulary4mydictionary.Basic) != 0 &&
-		strings.Compare(vocabularyAnswer.Status, vocabulary4mydictionary.Advance) != 0 {
+	if strings.Compare(vocabularyAnswer.Status, mydictionary.Basic) != 0 &&
+		strings.Compare(vocabularyAnswer.Status, mydictionary.Advance) != 0 {
 		result += "  {"
 		result += vocabularyAnswer.Status
 		result += "}\n"
