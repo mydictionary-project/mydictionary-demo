@@ -12,8 +12,8 @@ github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZb
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/stretchr/testify v1.2.3-0.20181224173747-660f15d67dbb h1:cRItZejS4Ok67vfCdrbGIaqk86wmtQNOjVD7jSyS2aw=
 github.com/stretchr/testify v1.2.3-0.20181224173747-660f15d67dbb/go.mod h1:a8OnRcib4nhh0OaRAV+Yts87kKdq0PP7pXfy6kDkUVs=
-github.com/zzc-tongji/mydictionary/v4 v4.1.0 h1:7rgn+0Pys4fw+mXiD026rTzPuHto86BRxUia8FRNQSg=
-github.com/zzc-tongji/mydictionary/v4 v4.1.0/go.mod h1:Q54y87rvsHMFjBnFCLS5nmdkrPkNGOjmNqVYhguVLwM=
+github.com/zzc-tongji/mydictionary/v4 v4.1.1 h1:pzD6LJIUIjpceP4ShVkUeixTQJgEtlrUV5CeZGQ4EOc=
+github.com/zzc-tongji/mydictionary/v4 v4.1.1/go.mod h1:Q54y87rvsHMFjBnFCLS5nmdkrPkNGOjmNqVYhguVLwM=
 golang.org/x/net v0.0.0-20180218175443-cbe0f9307d01/go.mod h1:mL1N/T3taQHkDXs73rZJwtUhF3w3ftmwwsq0BUmARs4=
 golang.org/x/net v0.0.0-20181114220301-adae6a3d119a h1:gOpx8G595UYyvj8UK4+OFyY4rx037g3fmfhe5SasG3U=
 golang.org/x/net v0.0.0-20181114220301-adae6a3d119a/go.mod h1:mL1N/T3taQHkDXs73rZJwtUhF3w3ftmwwsq0BUmARs4=
