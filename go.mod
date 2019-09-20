@@ -1,4 +1,4 @@
-module github.com/zzc-tongji/mydictionary-demo/v5
+module github.com/zzc-tongji/mydictionary-demo/v4
 
 go 1.13
 
