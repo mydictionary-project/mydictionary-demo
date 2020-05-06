@@ -38,7 +38,7 @@ Users could also use [JSON Editor Online](http://jsoneditoronline.org/) to edit 
 
 ##### 3.1.1. Configure File "mydictionary.setting.json"
 
-Getting further information from [here](https://github.com/zzc-tongji/mydictionary/blob/master/readme/main.md#24-configuration).
+Getting further information from [here](https://github.com/zzc-tongji/mydictionary/blob/master/readme/main.md#25-configuration).
 
 ##### 3.1.2.  Configure File "mydictionary-local-cli.setting.json"
 
