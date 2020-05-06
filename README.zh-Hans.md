@@ -42,7 +42,7 @@
 
 ##### 3.1.1. 配置文件 "mydictionary.setting.json"
 
-从[这里](https://github.com/zzc-tongji/mydictionary/blob/master/readme/main.zh-Hans.md#24-%E9%85%8D%E7%BD%AE)获取更多信息。
+从[这里](https://github.com/zzc-tongji/mydictionary/blob/master/readme/main.zh-Hans.md#25-%E9%85%8D%E7%BD%AE)获取更多信息。
 
 ##### 3.1.2. 配置文件 "mydictionary-local-cli.setting.json"
 
