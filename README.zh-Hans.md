@@ -42,7 +42,7 @@
 
 ##### 3.1.1. 配置文件 "mydictionary.setting.json"
 
-从[这里](https://github.com/zzc-tongji/mydictionary/blob/master/readme/main.md#24-%E9%85%8D%E7%BD%AE)获取更多信息。
+从[这里](https://github.com/zzc-tongji/mydictionary/blob/master/readme/main.zh-Hans.md#24-%E9%85%8D%E7%BD%AE)获取更多信息。
 
 ##### 3.1.2. 配置文件 "mydictionary-local-cli.setting.json"
 
@@ -357,9 +357,6 @@ Quit.
 ### 4. 交流
 
 - [反馈](https://github.com/zzc-tongji/mydictionary-demo/issues)
-- QQ群：727068810
-
-![727068810](./README.picture/727068810.png)
 
 ### 5. 其他
 
