@@ -352,9 +352,6 @@ Quit.
 ### 4. Communication
 
 - [Feedback](https://github.com/zzc-tongji/mydictionary-demo/issues)
-- QQ group: 727068810
-
-![727068810](./README.picture/727068810.png)
 
 ### 5. Others
 
